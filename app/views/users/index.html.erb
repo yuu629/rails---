@@ -37,7 +37,7 @@
      <%= link_to "編集",[:edit, user] %>
     </td>
     <td>
-     <%= link_to "削除", user, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+     <%= link_to "削除", user, { turbo_method: :delete } %>
     </td>
    </tr>
   <% end %>

@@ -37,9 +37,13 @@ class UsersController < ApplicationController
  end
 
   def destroy
-   @user = User.find(params[:id])
-   @user.destroy
+    @user.destroy
+
+    respond_to do |format|
+      format.html { redirect_to users, notice: "Task was successfully destroyed.", status: :see_other }
+      format.json { head :no_content }
    flash[:notice] = "ユーザーを削除しました"
    redirect_to :users
   end
+ end
 end
